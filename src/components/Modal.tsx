@@ -18,7 +18,7 @@ function Modal({ isOpen, onClose, title, url }: ModalProps) {
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
       <div
-        className={`relative w-full max-w-4xl h-[80vh] rounded-lg shadow-2xl flex flex-col ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'}`}
+        className={`relative w-full max-w-6xl h-[90vh] rounded-lg shadow-2xl flex flex-col ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'}`}
         onClick={(e) => e.stopPropagation()}
       >
         <div className={`flex items-center justify-between p-6 border-b ${isDark ? 'border-[#C5A059]/20' : 'border-gray-200'}`}>
