@@ -8,9 +8,9 @@ function Header() {
     <header className={`relative border-b transition-colors duration-300 ${isDark ? 'bg-[#050505] border-[#C5A059]/20' : 'bg-white border-gray-200'}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
         <img
-          src="/photo_2025-10-08_09-35-19-removebg-preview.png"
+          src={isDark ? "/photo_2025-10-08_09-35-19-removebg-preview.png" : "/gemini_generated_image_k36grrk36grrk36g.png"}
           alt="Deep Break Logo"
-          className="h-24"
+          className="h-32"
         />
 
         <nav className="flex gap-8 items-center">
