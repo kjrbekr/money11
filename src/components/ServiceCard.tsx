@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { TrendingUp, Building2, Cpu, LineChart } from 'lucide-react';
 import { useTheme } from '../ThemeContext';
+import Modal from './Modal';
 
 interface ServiceCardProps {
   title: string;
@@ -20,12 +22,14 @@ const icons = {
 function ServiceCard({ title, badge, description, example, url, icon }: ServiceCardProps) {
   const { isDark } = useTheme();
   const Icon = icons[icon];
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <a
-      href={url}
-      className={`group relative block border rounded-lg p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl ${isDark ? 'bg-gradient-to-br from-[#0a0a0a] to-[#050505] border-[#C5A059]/30 hover:shadow-[#C5A059]/20 hover:border-[#C5A059]' : 'bg-white border-gray-200 hover:shadow-xl hover:shadow-gray-300/30 hover:border-[#C5A059]'}`}
-    >
+    <>
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className={`group relative block w-full border rounded-lg p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl text-left ${isDark ? 'bg-gradient-to-br from-[#0a0a0a] to-[#050505] border-[#C5A059]/30 hover:shadow-[#C5A059]/20 hover:border-[#C5A059]' : 'bg-white border-gray-200 hover:shadow-xl hover:shadow-gray-300/30 hover:border-[#C5A059]'}`}
+      >
       <div className={`absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${isDark ? 'bg-gradient-to-br from-[#C5A059]/0 to-[#C5A059]/5' : 'bg-gradient-to-br from-[#C5A059]/0 to-[#C5A059]/3'}`}></div>
 
       <div className="relative z-10">
@@ -57,7 +61,15 @@ function ServiceCard({ title, badge, description, example, url, icon }: ServiceC
           <span className="transform group-hover:-translate-x-1 transition-transform">←</span>
         </div>
       </div>
-    </a>
+      </button>
+
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={title}
+        url={url}
+      />
+    </>
   );
 }
 
