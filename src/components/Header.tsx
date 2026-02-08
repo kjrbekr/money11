@@ -7,14 +7,11 @@ function Header() {
   return (
     <header className={`relative border-b transition-colors duration-300 ${isDark ? 'bg-[#050505] border-[#C5A059]/20' : 'bg-white border-gray-200'}`}>
       <div className="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
-        <div className="relative">
-          <div className="absolute inset-0 blur-xl opacity-40 bg-[#C5A059]"></div>
-          <img
-            src="/photo_2025-10-08_09-35-19-removebg-preview.png"
-            alt="Deep Break Logo"
-            className="h-24 relative z-10"
-          />
-        </div>
+        <img
+          src="/photo_2025-10-08_09-35-19-removebg-preview.png"
+          alt="Deep Break Logo"
+          className="h-24"
+        />
 
         <nav className="flex gap-8 items-center">
           <a href="#services" className={`transition-colors font-['IBM_Plex_Sans_Arabic'] text-sm font-600 ${isDark ? 'text-gray-300 hover:text-[#C5A059]' : 'text-gray-600 hover:text-[#C5A059]'}`}>
